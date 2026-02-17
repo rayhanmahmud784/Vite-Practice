@@ -1,0 +1,28 @@
+.User_input {
+   color: white;
+        border: none;
+        background-color: black;
+           text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 10px 24px;
+               margin: auto;
+
+}
+
+.User_inputIn{
+     color: black;
+        border: none;
+        background-color: turquoise;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        padding: 10px 24px;
+        margin: auto;
+}
