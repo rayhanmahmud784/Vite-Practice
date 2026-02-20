@@ -1,0 +1,141 @@
+Open Redirect Work Vite
+
+import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+
+// Imports
+import Navbar from './assets/Component/Navbar'
+import Singup from './assets/Component/Singup' 
+import Blog from './assets/Component/Blog'
+import Email from './assets/Component/Email'
+import Home from './assets/Component/Home'
+import Error from './assets/Component/Error'
+
+function App() {
+  return (
+    <BrowserRouter>
+      {/* Navbar is outside Routes so it shows on every page */}
+      <Navbar />
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/Email' element={<Email />} />
+        <Route path='/Singup' element={<Singup />} />
+        <Route path='/Blog' element={<Blog />} />
+        
+        {/* 404 Error page */}
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
+
+export default App
+
+
+
+
+
+function Blog() {
+  return (
+    <div className='mt-150px text-center'>
+        <h1>This is Blog Page</h1>
+    </div>
+  )
+}
+
+export default Blog
+
+
+
+function Email() {
+  return (
+    <div>
+        <h1 className='mt-150px text-center'>
+            This is Email Page</h1></div>
+  )
+}
+
+export default Email;
+
+import { useNavigate } from 'react-router-dom';
+
+function Error() {
+    let Hookurls = useNavigate();
+    const Handlemar =()=>{
+        Hookurls('/')
+    }
+  return (
+    <div className='mt-150px text-center'>
+        <h1>Error: Page Not Found</h1>
+        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center mt-4' 
+        onClick={Handlemar}>
+          Go Home
+        </button>
+    </div>
+  )
+}
+
+export default Error
+
+
+
+function Home() {
+  return (
+    <div><h1 className='mt-150px text-center'>
+        Welcome to the Home Page</h1></div>
+  )
+}
+
+export default Home
+
+
+
+
+import { NavLink, Outlet} from 'react-router-dom'
+function Navbar() {
+  return (
+   <>
+   <nav className="flex w-full top-0 left-0">
+    <ul className="max-w-[90vw] flex flex-wrap  justify-between items-center mx-auto py-5">
+      <a href="" className="font-semibold text-2xl">Rahan Programer</a>
+      <div className="flex [&>li]:pl-7">
+        <li>
+<NavLink to="/">Home</NavLink>
+        </li>
+         <li>
+<NavLink to="/Email">Email</NavLink>
+        </li>
+         <li>
+<NavLink to="/Singup">Singup</NavLink>
+        </li>
+         <li>
+<NavLink to="/Blog">Blog</NavLink>
+        </li>
+      </div>
+    </ul>
+    <br />
+
+   </nav>
+      < Outlet />
+   </>
+  )
+}
+
+export default Navbar
+
+
+
+
+function Singup() {
+  return (
+    <div className='mt-150px text-center'>
+        <h1>This is Singup Page</h1>
+    </div>
+  )
+}
+
+export default Singup;
+
+
